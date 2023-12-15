@@ -1,6 +1,6 @@
 import React from 'react'
 import me_hero from './assets/img/me_hero.png'
-
+import myCV from './assets/folders/CV2024.pdf'
 export default function About() {
   return (
     <>
@@ -56,7 +56,7 @@ export default function About() {
                                     <div className="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-                            <a className="btn" href="folders/CV.pdf" title="CV" download>Download Resume</a>
+                            <a className="btn" href={myCV} title="CV" download>Download Resume</a>
                             
                         </div>
                     </div>
