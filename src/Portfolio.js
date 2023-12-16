@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+
 import bankManagement from './assets/img/back_management.png'
 import movieRecommendation from './assets/img/movie_recommandation.png'
 import analysisDataMorocco from './assets/img/Analysis-data-in-morocco.jpg'
@@ -9,11 +13,14 @@ import ELearningWebAppLaravel from './assets/img/e_learning_web_app_laravel.png'
 import chessGameReact from './assets/img/chess_game_react.png'
 
 export default function Portfolio() {
+    useEffect(()=>{
+        AOS.init({duration:2000})
+    },[])
   return (
     <>
         
         {/* <!-- Portfolio Start --> */}
-        <div class="portfolio" id="portfolio">
+        <div class="portfolio" id="portfolio" data-aos="zoom-in">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                     <p>My Portfolio</p>
