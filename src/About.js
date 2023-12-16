@@ -56,7 +56,7 @@ export default function About() {
                                     <div className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div className="skill-name">
-                                    <p>Java & Spring Boot</p><p>70%</p>
+                                    <p>JavaScript & React</p><p>70%</p>
                                 </div>
                                 <div className="progress">
                                     <div className="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
