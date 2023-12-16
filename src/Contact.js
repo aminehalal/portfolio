@@ -7,6 +7,7 @@ export default function Contact() {
     const templateId = 'template_fihojnq';
     const publicKey = '-ip2gcHmEy9gGVRcw';
     const [successMessage ,setSuccessMessage] = useState('');
+    const [errorMessages, setErrorMessages] = useState({});
     const form = useRef();
     const name = useRef();
     const email = useRef();
@@ -19,20 +20,53 @@ export default function Contact() {
     useEffect(()=>{
         AOS.init({duration:2000})
     },[])
+
+    const isEmailValid = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      };
+
+      const validateForm = () => {
+        const errors = {};
+    
+        if (!form.current.from_name.value.trim()) {
+          errors.from_name = 'Please enter your name';
+        }
+    
+        const emailValue = form.current.from_email.value.trim();
+        if (!emailValue) {
+          errors.from_email = 'Please enter your email';
+        } else if (!isEmailValid(emailValue)) {
+          errors.from_email = 'Please enter a valid email';
+        }
+    
+        if (!form.current.subject.value.trim()) {
+          errors.subject = 'Please enter a subject';
+        }
+        if (!form.current.message.value.trim()) {
+          errors.message = 'Please enter your message';
+        }
+    
+        setErrorMessages(errors);
+    
+        return Object.keys(errors).length === 0;
+      };
+
     const handleSendMessage = (e) => {
         e.preventDefault();
-        
-        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
-        .then((result) => {
-            setSuccessMessage('Message sent successfully!');
-            form.current.reset();
-            setTimeout(() => {
-                setSuccessMessage('');
-              }, 5000);
-        }, (error) => {
-            console.log(error.text);
-        });
-        console.log(form);
+        if(validateForm()){
+            emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+            .then((result) => {
+                setSuccessMessage('Message sent successfully!');
+                form.current.reset();
+                setTimeout(() => {
+                    setSuccessMessage('');
+                  }, 5000);
+            }, (error) => {
+                console.log(error.text);
+            });
+            console.log(form);
+        }
 
     }
 
@@ -67,6 +101,9 @@ export default function Contact() {
                                     <div>
                                         <button className="btn" type="submit" id="sendMessageButton">Send Message</button>
                                     </div>
+                                    {errorMessages && Object.values(errorMessages)[0] && (
+                                        <p className='error-message'>{Object.values(errorMessages)[0]}</p>
+                                    )}
                                     {successMessage && <p className='success-message'>{successMessage}</p>}
                                 </form>
                             </div>
