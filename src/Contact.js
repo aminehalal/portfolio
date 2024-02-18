@@ -81,7 +81,7 @@ export default function Contact() {
                         <div className="col-md-8">
                             <div className="contact-form">
                                 <div id="success"></div>
-                                <form name="sentMessage" id="contactForm" onSubmit={(e) => handleSendMessage(e)} ref={form} novalidate="novalidate">
+                                <form name="sentMessage" id="contactForm" onSubmit={(e) => handleSendMessage(e)} ref={form} noValidate="novalidate">
                                     <div className="control-group">
                                         <input type="text" ref={name} name='from_name' onChange={(e) => handleChangeForm(e)} className="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
                                         <p className="help-block"></p>
