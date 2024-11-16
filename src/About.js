@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import me_hero from './assets/img/me_hero.png';
-import myCV from './assets/folders/CV2024.pdf';
+import myCV from './assets/folders/CV_Amine_halal.pdf';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './assets/css/about.css'
@@ -12,10 +12,11 @@ export default function About() {
 
   const skills = [
     { name: 'PHP & Laravel', percentage: 85 },
+    { name: 'JavaScript & React', percentage: 85 },
     { name: 'Excel & Power Bi', percentage: 80 },
     { name: 'SQL & MySQL', percentage: 80 },
     { name: 'Python & Django', percentage: 75 },
-    { name: 'JavaScript & React', percentage: 70 },
+    { name: 'Java & Spring Boot', percentage: 70 },
   ];
 
   return (
@@ -26,7 +27,7 @@ export default function About() {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="about-img">
-                <img src={me_hero} alt="Image" />
+                <img loading='lazy' src={me_hero} alt="Me" />
               </div>
             </div>
             <div className="col-lg-6">
@@ -37,8 +38,7 @@ export default function About() {
                 </div>
                 <div className="about-text">
                   <p>
-                    I am a student at the Faculty of Science in Rabat. I am very impressed with data science and its analysis, and I am trying to develop myself in this field day after day.
-                  </p>
+                  I am a graduate of the Faculty of Science in Rabat and a passionate full-stack developer with a strong interest in data science and analysis. I am constantly expanding my skills and expertise in development and technology, striving to deliver innovative and impactful solutions.                  </p>
                 </div>
                 <div className="skills">
                   {skills.map((skill, index) => (

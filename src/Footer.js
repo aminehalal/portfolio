@@ -5,7 +5,7 @@ export default function Footer() {
     <>
         
         {/* <!-- Footer Start --> */}
-        <div className="footer wow fadeIn" data-wow-delay="0.3s">
+        <Footer className="footer wow fadeIn" data-wow-delay="0.3s">
             <div className="container-fluid">
                 <div className="container">
                     <div className="footer-info">
@@ -28,7 +28,7 @@ export default function Footer() {
                     <p>&copy; <a href="#home">Amine HALAL</a>, All Right Reserved | Designed By <a rel="noreferrer"  href="https://www.facebook.com/aminenohalal" target='_blank'>Amine Halal</a></p>
                 </div>
             </div>
-        </div>
+        </Footer>
         {/* <!-- Footer End --> */}
     </>
   )

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -10,22 +10,24 @@ import tikTokJs from './assets/img/tik_tok_js.png';
 import weatherApReact from './assets/img/weather-app-react.png';
 import ELearningWebAppLaravel from './assets/img/e_learning_web_app_laravel.png';
 import chessGameReact from './assets/img/chess_game_react.png';
+import stockManagement from './assets/img/stockmanagement.PNG'
 
 export default function Portfolio() {
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, []);
 
-    const portfolioItems = [
+    const portfolioItems = useMemo(()=> [
         { img: analysisDataMorocco, category: "filter-1", title: "Analysis of Covid19 Data in Morocco", link: "https://github.com/aminehalal/Analysis-of-Covid-19-data-in-Morocco" },
         { img: bankManagement, category: "filter-2", title: "Bank Management System", link: "https://github.com/aminehalal/Bank-Management-System" },
         { img: movieRecommendation, category: "filter-2", title: "Movie Recommendation System", link: "https://github.com/aminehalal/Movie-Recommandation" },
         { img: todoListLaravel, category: "filter-4", title: "To Do List using Laravel framework", link: "https://todolisthalal.000webhostapp.com/" },
         { img: tikTokJs, category: "filter-3", title: "Tik Tok game with Java Script", link: "https://aminehalal.github.io/Tic-Toc-Game-JS/" },
         { img: ELearningWebAppLaravel, category: "filter-4", title: "E-Learning Web App using Laravel framework", link: "https://github.com/aminehalal/E-Learning-Web-App" },
-        { img: weatherApReact, category: "filter-5", title: "Weather App using React js", link: "https://aminehalal.github.io/Weather-App-ReactJS/" },
-        { img: chessGameReact, category: "filter-5", title: "Chess Game using React js", link: "https://chess-game-aminehalal.vercel.app/" }
-    ];
+        { img: weatherApReact, category: "filter-5", title: "Weather App using React.js", link: "https://aminehalal.github.io/Weather-App-ReactJS/" },
+        { img: chessGameReact, category: "filter-5", title: "Chess Game using React.js", link: "https://chess-game-aminehalal.vercel.app/" },
+        { img: stockManagement, category: "filter-4 filter-5", title: "Stock Management using React.js and Laravel", link: "https://github.com/aminehalal/Stock-Management-Laravel-React.js" }
+    ] , [] );
 
     const [filter, setFilter] = useState("*");
     const [filteredItems, setFilteredItems] = useState(portfolioItems);
@@ -40,7 +42,7 @@ export default function Portfolio() {
                 return filterCategories.some(category => itemCategories.includes(category));
             }));
         }
-    }, [filter]);
+    }, [filter , portfolioItems]);
 
     const handleFilterClick = (newFilter) => {
         setFilter(newFilter);
@@ -62,7 +64,7 @@ export default function Portfolio() {
                                 <li onClick={() => handleFilterClick("filter-2")} className={filter === "filter-2" ? "filter-active" : ""}>Python</li>
                                 <li onClick={() => handleFilterClick("filter-3")} className={filter === "filter-3" ? "filter-active" : ""}>Java Script</li>
                                 <li onClick={() => handleFilterClick("filter-4")} className={filter === "filter-4" ? "filter-active" : ""}>Laravel</li>
-                                <li onClick={() => handleFilterClick("filter-5")} className={filter === "filter-5" ? "filter-active" : ""}>React js</li>
+                                <li onClick={() => handleFilterClick("filter-5")} className={filter === "filter-5" ? "filter-active" : ""}>React.js</li>
                             </ul>
                         </div>
                     </div>
@@ -71,7 +73,7 @@ export default function Portfolio() {
                             <div key={index} className={`col-lg-4 col-md-6 col-sm-12 portfolio-item ${item.category} wow fadeInUp`} data-wow-delay={`${0.2 * index}s`}>
                                 <div className="portfolio-wrap">
                                     <div className="portfolio-img">
-                                        <img src={item.img} alt={item.title} />
+                                        <img loading='lazy' src={item.img} alt={item.title} />
                                     </div>
                                     <div className="portfolio-text">
                                         <h3>{item.title}</h3>

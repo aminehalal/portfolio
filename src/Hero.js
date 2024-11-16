@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import me_hero from './assets/img/me_hero.png';
 
 function Hero() {
   const [displayText, setDisplayText] = useState('');
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const textArray = ["Data Analyst", "Backend Developer"];
+
+  // Fix: Add a dependency array to useMemo
+  const textArray = useMemo(() => ["Full Stack Developer", "Data Analyst"], []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -12,7 +14,7 @@ function Hero() {
       const currentLength = displayText.length;
 
       if (currentLength < currentText.length) {
-        setDisplayText(prevText => prevText + currentText[currentLength]);
+        setDisplayText((prevText) => prevText + currentText[currentLength]);
       } else {
         clearInterval(interval);
         setTimeout(() => {
@@ -27,7 +29,7 @@ function Hero() {
 
   return (
     <>
-      {/* <!-- Hero Start --> */}
+      {/* Hero Section Start */}
       <div className="hero" id="home">
         <div className="container-fluid">
           <div className="row align-items-center">
@@ -50,13 +52,13 @@ function Hero() {
             </div>
             <div className="col-sm-12 col-md-6 d-none d-md-block">
               <div className="hero-image">
-                <img src={me_hero} alt="Amine Halal" />
+                <img loading="lazy" src={me_hero} alt="Portrait of Amine Halal" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <!-- Hero End --> */}
+      {/* Hero Section End */}
     </>
   );
 }

@@ -40,8 +40,8 @@ export default function Formation() {
                     </div>
                     <div className="timeline-item left wow slideInLeft" data-wow-delay="0.1s" data-aos="fade-right" data-aos-duration="3000">
                         <div className="timeline-text">
-                            <div className="timeline-date">2022 - Now</div>
-                            <h2>Master's degree in Computer Science and Telecommunications</h2>
+                            <div className="timeline-date">2022 - 2024</div>
+                            <h2>Master's degree in Computer Science and Telecommunications, specializing in Software Engineering</h2>
                             <h4>Faculty of Science in Rabat</h4>
                             <p>
                                 Other than what I study, I love discovering new things daily.
