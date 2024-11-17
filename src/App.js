@@ -13,7 +13,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <React.Fragment>
       <Header/>
       <Hero/>
       <About/>
@@ -21,7 +21,7 @@ function App() {
       <Portfolio/>
       <Contact/>
       <Footer/>
-    </div>
+    </React.Fragment>
   );
 }
 

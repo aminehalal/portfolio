@@ -49,8 +49,7 @@ export default function Portfolio() {
     };
 
     return (
-        <>
-            <div className="portfolio" id="portfolio" data-aos="zoom-in">
+            <section className="portfolio" id="portfolio" data-aos="zoom-in">
                 <div className="container">
                     <div className="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                         <p>My Portfolio</p>
@@ -84,7 +83,6 @@ export default function Portfolio() {
                         ))}
                     </div>
                 </div>
-            </div>
-        </>
+            </section>
     );
 }

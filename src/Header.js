@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <>
         {/* Nav Bar Start */}
-        <Header className="navbar navbar-expand-lg bg-light navbar-light">
+        <header className="navbar navbar-expand-lg bg-light navbar-light">
             <div className="container-fluid">
                 <a href="/" className="navbar-brand">Amine HALAL</a>
                 <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -21,7 +21,7 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-        </Header>
+        </header>
         {/* Nav Bar End */}
     </>
   )

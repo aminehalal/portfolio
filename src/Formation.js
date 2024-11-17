@@ -11,7 +11,7 @@ export default function Formation() {
   return (
     <>      
         {/* <!-- Formation Start --> */}
-        <div className="formation" id="formation" data-aos="zoom-in">
+        <section className="formation" id="formation" data-aos="zoom-in">
             <div className="container">
                 <header className="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                     <p>My Resume</p>
@@ -50,7 +50,7 @@ export default function Formation() {
                     </div>
                 </div>
             </div>
-        </div> 
+        </section> 
         {/* <!-- Formation End --> */}
     </>
   )

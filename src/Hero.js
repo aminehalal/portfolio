@@ -30,7 +30,7 @@ function Hero() {
   return (
     <>
       {/* Hero Section Start */}
-      <div className="hero" id="home">
+      <section className="hero" id="home">
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-sm-12 col-md-6">
@@ -57,7 +57,7 @@ function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       {/* Hero Section End */}
     </>
   );

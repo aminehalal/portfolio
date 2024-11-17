@@ -20,9 +20,7 @@ export default function About() {
   ];
 
   return (
-    <>
-      {/* <!-- About Start --> */}
-      <div className="about wow fadeInUp" data-wow-delay="0.1s" id="about" data-aos="zoom-in">
+      <section className="about wow fadeInUp" data-wow-delay="0.1s" id="about" data-aos="zoom-in">
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -58,8 +56,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
-      {/* <!-- About End --> */}
-    </>
+        {/* <!-- About End --> */}
+      </section>
   );
 }
